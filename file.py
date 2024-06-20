@@ -1,5 +1,5 @@
 def save_to_file(file_name, jobs):
-  file = open(f"{file_name}.csv", mode="w", encoding="utf-8")
+  file = open(f"{file_name}.csv", mode="w", encoding="utf-8-sig")
   file.write("title, company, reward, link\n")
 
   # writer = csv.writer(file)
