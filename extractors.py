@@ -4,14 +4,14 @@ from bs4 import BeautifulSoup
 import csv
 
 keywords = [
-  "flutter",
-  "react",
-  "kotlin"
+  "python",
+  "javascript",
+  "java"
 ]
 
 url_list =[]
 
-def making(keywords) :
+def wantedUrlListMaker(keywords) :
   for word in keywords:
     url_list.append(f'https://www.wanted.co.kr/search?query={word}&tab=position')
 
@@ -68,7 +68,8 @@ def makeCSV(db) :
   file.close()
 
 
-making(keywords)
+wantedUrlListMaker(keywords)
+
 contentsExtractor(url_list)
 jobExtractor(content_list)
 makeCSV(jobs_bd)
