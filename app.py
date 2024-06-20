@@ -9,7 +9,7 @@ browser = p.chromium.launch(headless=False) # headless=False 가 되면 실제�
 
 page = browser.new_page()
 
-page.goto('https://www.wanted.co.kr/')
+page.goto('https://www.wanted.co.kr/search?query=flutter&tab=position')
 
 # 만약 매크로를 만들고 싶다면!!
 # time.sleep(3)
@@ -46,14 +46,12 @@ jobs = soup.find_all("div", class_="JobCard_container__REty8")
 jobs_bd = []
 
 for job in jobs:
-  link = f"https://www.wanted.co.kr/{job.find('a')['href']}"
-  position = job.find()
+  link = f"https://www.wanted.co.kr{job.find('a')['href']}"
   title = job.find("strong", class_="JobCard_title__HBpZf").text
   company = job.find("span", class_="JobCard_companyName__N1YrF").text
   reward = job.find("span", class_="JobCard_reward__cNlG5").text
   job = {
     "title" : title,
-    "position" : position,
     "company" : company,
     "reward" : reward,
     "link" : link
