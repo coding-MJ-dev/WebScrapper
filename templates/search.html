@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job scrapper</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+/>
+</head>
+<body>
+  <main class="container">
+    <h1>Search results for "{{keyword}}": </h1>
+    <table>
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>company</th>
+          <th>reward</th>
+          <th>link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr>
+          <td>{{job.title}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.reward}}</td>
+          <td><a href="{{job.link}}" target="_blank">Apply now</a></td>
+        </tr>
+        {% endfor%}
+      </tbody>
+    </table>
+
+  </main>
+
+</body>
+</html>
