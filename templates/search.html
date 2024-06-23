@@ -19,18 +19,20 @@
         <table role="striped">
           <thead>
             <tr>
+              <th>site</th>
               <th>title</th>
               <th>company</th>
-              <th>reward</th>
+              <th>location</th>
               <th>link</th>
             </tr>
           </thead>
           <tbody>
             {% for job in jobs %}
             <tr>
+              <td>{{job.site}}</td>
               <td>{{job.title}}</td>
               <td>{{job.company}}</td>
-              <td>{{job.reward}}</td>
+              <td>{{job.location}}</td>
               <td><a href="{{job.link}}" target="_blank">Apply now</a></td>
             </tr>
             {% endfor%}
