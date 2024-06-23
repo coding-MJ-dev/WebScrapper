@@ -18,16 +18,6 @@ def get_number(url):
     return 1
 
 
-def get_url(keyword):
-    number = get_number(
-        f"https://weworkremotely.com/remote-jobs/search?utf8=%E2%9C%93&term={keyword}"
-    )
-    for i in range(number):
-        paths.append(f"https://web3.career/{keyword}-jobs?page={i+1}")
-
-    return paths
-
-
 def scrape_page(paths):
     job_db = []
     for skill in paths:
@@ -46,13 +36,7 @@ def scrape_page(paths):
         for job in jobs:
             company = job.find("span", class_="company").text
             title = job.find("span", class_="title").text
-            loaction = (
-                # job.find("span", class_="company")
-                # .find_next_sibling("span")
-                # .find_next_sibling("span")
-                # .text
-                job.find("span", class_="region").text
-            )
+            loaction = job.find("span", class_="region").text
             link = job.find("a").get("href")
             print(loaction)
             job_data = {

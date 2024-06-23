@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, send_file
-from extractors import extract_wanted_jobs
 from file import save_to_file
 from berlin import extract_beriln_jobs
 from web3 import extract_web3_jobs
