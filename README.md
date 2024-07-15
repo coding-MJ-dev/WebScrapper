@@ -1,5 +1,5 @@
 ## Web scrapper for Job seeker
-**- Scraping job information using Python**
+**- Scraping job information using Python, Flask**
 
 
 **- Save and import the scraped information into an Excel file (CSV) or search via HTML.**
